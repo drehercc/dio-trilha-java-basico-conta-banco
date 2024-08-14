@@ -3,7 +3,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Locale localeBR = Locale.of("pt", "BR");
         Scanner scanner = new Scanner(System.in).useLocale(localeBR);
         ;
@@ -23,7 +23,8 @@ public class ContaTerminal {
             System.out.println("Olá " + nome + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia
                     + ", conta " + conta + " e seu saldo " + saldo + " já está disponível para saque");
         } catch (InputMismatchException e) {
-            System.out.println("Ocorreu um erro de entrada inválida. Possivelmente você tentou digitar uma valor de saldo com '.'. Neste código estamos usando a localização brasileira, portanto tente separar com ','");
+            System.out.println(
+                    "Ocorreu um erro de entrada inválida. Possivelmente você tentou digitar uma valor de saldo com '.'. Neste código estamos usando a localização brasileira, portanto tente separar com ','");
         } catch (Exception e) {
             System.out.println("Ocorreu um erro inesperado: " + e);
         }
